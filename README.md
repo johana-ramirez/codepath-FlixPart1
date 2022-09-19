@@ -11,7 +11,7 @@ Flix is an app that allows users to browse movies from the [The Movie Database A
 ## Flix Part 1
 
 ### User Stories
-- [x] 
+- [x] I have a navigation bar on the xcode file but it is still not user usable. 
 
 #### REQUIRED (10pts)
 - [x] (2pts) User sees an app icon on the home screen and a styled launch screen.
@@ -24,9 +24,9 @@ Flix is an app that allows users to browse movies from the [The Movie Database A
 
 ### App Walkthrough GIF
 
-<img src="YOUR_GIF_URL_HERE" width=250><br>
+<img src="https://imgur.com/IeSNAQ9" width=250><br>
 
 ### Notes
-Describe any challenges encountered while building the app. 
 -I was challenged with creating the MovieCell and formatting the layout. I had to think about how classes were intereconnected in Xcode. 
  -Another challenge was using the correct syntax and forggeting small parts like "!" but I'm learning how swift works. 
+ -Also my app takes a while to launch, so I will look into how I can shorten the time and lessen the lag. 
