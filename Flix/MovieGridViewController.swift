@@ -6,13 +6,46 @@
 //
 
 import UIKit
+import AlamofireImage
 
-class MovieGridViewController: UIViewController {
+class MovieGridViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var movies = [[String: Any]]()//properties - variables
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieGridCell", for: indexPath) as! MovieGridCell
+        
+        let movie = movies[indexPath.item]
+        
+        let baseUrL = "https://image.tmdb.org/t/p/w185"
+        let posterPath = movie["poster_path"] as! String
+        let posterUrL = URL(string: baseUrL + posterPath)!
+        //cell.textLabel!.text = title
+        cell.posterView.af.setImage(withURL: posterUrL)
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return movies.count
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        
+        layout.minimumLineSpacing = 4
+        layout.minimumInteritemSpacing = 4
+        
+        let width = (view.frame.size.width - layout.minimumInteritemSpacing * 2) / 3
+        layout.itemSize = CGSize(width: width, height: width * 3 / 2)
 
         // Do any additional setup after loading the view.
         
@@ -27,6 +60,8 @@ class MovieGridViewController: UIViewController {
                     let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                     
                  self.movies = dataDictionary["results"] as! [[String: Any]]
+                 
+                 self.collectionView.reloadData()
                 
 
              }
