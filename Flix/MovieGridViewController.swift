@@ -32,7 +32,7 @@ class MovieGridViewController: UIViewController, UICollectionViewDataSource, UIC
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return movies.count
     }
-
+    //set up
     override func viewDidLoad() {
         super.viewDidLoad()
         
