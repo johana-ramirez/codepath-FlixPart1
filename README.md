@@ -19,7 +19,8 @@ Flix is an app that allows users to browse movies from the [The Movie Database A
 
 ### App Walkthrough GIF
 
-Imgur link: https://imgur.com/a/A3poi01.gif 
+Imgur link: 
+https://imgur.com/a/fm0rX3z
 
 ### Notes
 It was very interesting and fun adding more naviagation bars and controllers. I enjoyed seeing the flow of an app. I was challenged by implementing the correct flow of view controllers and navigation bars. In addition, I believe I can improve the app's visuals and design by adding a white bar where the navigation bar is when you click on a movie to check for more information. Overall, this project helped me understand how I can use APIs to extract specific information. 
